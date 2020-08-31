@@ -2,25 +2,160 @@
 
 namespace User\UserBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * @ORM\Entity
+ * User
+ *
  * @ORM\Table(name="fos_user_table")
+ * @ORM\Entity(repositoryClass="User\UserBundle\Repository\UserRepository")
  */
 class User extends BaseUser
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\Column(type="integer")
+     * @ORM\OneToMany(targetEntity="AppBundle/Entity/appointment", mappedBy="id")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
-    public function __construct()
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img", type="string", length=255)
+     */
+    protected $img;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=255)
+     */
+    protected $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=255)
+     */
+    protected $telephone;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_birth", type="date")
+     */
+    protected $dateBirth;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
     {
-        parent::__construct();
-        // your own logic
+        return $this->id;
+    }
+
+    /**
+     * Set img
+     *
+     * @param string $img
+     *
+     * @return User
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
+    /**
+     * Get img
+     *
+     * @return string
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     *
+     * @return User
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     *
+     * @return User
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set dateBirth
+     *
+     * @param \DateTime $dateBirth
+     *
+     * @return User
+     */
+    public function setDateBirth($dateBirth)
+    {
+        $this->dateBirth = $dateBirth;
+
+        return $this;
+    }
+
+    /**
+     * Get dateBirth
+     *
+     * @return \DateTime
+     */
+    public function getDateBirth()
+    {
+        return $this->dateBirth;
     }
 }
+

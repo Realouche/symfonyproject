@@ -211,10 +211,11 @@
 							
 						</div>
                         <script>
-                            function change_text(){
-                            var day = (document.getElementById("day").value).parseInt();
-                            day = day - 7
-                            document.getElementById("day").innerHTML = day.toString() ;
+                            function change_class_select(){
+                            $("a").click(function() {
+								$("a").removeClass();
+								$("a").addClass("timing");
+
                             }
                         </script>
 

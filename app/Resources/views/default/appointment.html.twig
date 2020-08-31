@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 <!-- Breadcrumb -->
 			<div class="breadcrumb-bar">
 				<div class="container-fluid">
@@ -267,5 +268,11 @@
 				</div>
 
 			</div>	
+						{% else %}
+						<center>
+						<h1> You should be logged in </h1>
+						<button class="btn col-md-12 col-lg-6 btn-primary btn-block btn-lg login-btn" onclick="location.href='{{ path('fos_user_security_login') }}'">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</button>
+						</center>
+						{% endif %}
                         
 {% endblock %}

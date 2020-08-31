@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+<h1>get all users</h1>
+{% for user in users %}
+<li>{{ user.username|e }}<span> <button type="submit" class="btn btn-primary search-btn" onclick="location.href='{{ path('admin_dashboard_deleted', {'id': user.id}) }}'"> Delete <i class="icon-trash"></i> </button></span></li>
+{% endfor %}
+
+{% else %}
+        <center>
+        <h1> You should be logged in </h1>
+        <button class="btn col-md-12 col-lg-6 btn-primary btn-block btn-lg login-btn" onclick="location.href='{{ path('fos_user_security_login') }}'">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</button>
+        </center>
+{% endif %}
+                        
+{% endblock %}
