@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('@FOSUser/Home/home.html.twig');
+        return $this->render('default/index.html.twig');
     }
 }

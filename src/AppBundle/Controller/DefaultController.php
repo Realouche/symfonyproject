@@ -15,7 +15,7 @@ class DefaultController extends Controller
 {
     private $entityManager;
     /**
-     * @Route("/home", name="homepage")
+     * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
     {
