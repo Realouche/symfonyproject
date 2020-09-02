@@ -4,10 +4,10 @@
     <id name="id" type="integer" column="id">
       <generator strategy="AUTO"/>
     </id>
-    <field name="img" column="img" type="string" />
-    <field name="adresse" column="adresse" type="string" />
-    <field name="telephone" column="telephone" type="string" />
-    <field name="dateBirth" column="dateBirth" type="date" />
+    <field name="img" column="img" type="string" nullable="true" />
+    <field name="adresse" column="adresse" type="string" nullable="true" />
+    <field name="telephone" column="telephone" type="string" nullable="true" />
+    <field name="dateBirth" column="dateBirth" type="date" nullable="true" />
 
   </entity>
 </doctrine-mapping>

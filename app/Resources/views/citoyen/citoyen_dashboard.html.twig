@@ -125,9 +125,7 @@
 																<tr>
 																	<th>Doctor</th>
 																	<th>Appt Date</th>
-																	<th>Booking Date</th>
 																	<th>Amount</th>
-																	<th>Follow Up</th>
 																	<th>Status</th>
 																	<th></th>
 																</tr>
@@ -138,15 +136,13 @@
 																	<td>
 																		<h2 class="table-avatar">
 																			<a href="doctor-profile.html" class="avatar avatar-sm mr-2">
-																				<img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-01.jpg" alt="User Image">
+																				<img class="avatar-img rounded-circle" src="{{ user.img }}" alt="User Image">
 																			</a>
-																			<a href="doctor-profile.html">Dr. Ruby Perrin <span>Dental</span></a>
+																			<a href="doctor-profile.html"> {{ rdv.RespUsername }} <span>Dental</span></a>
 																		</h2>
 																	</td>
 																	<td> {{ rdv.date|date("m/d/Y") }} <span class="d-block text-info">{{ rdv.hour|date("h:m:s") }}</span></td>
-																	<td>{{rdv.idCitoyen}}</td>
 																	<td>$160</td>
-																	<td>{{ doc.username}}</td>
 																	<td><span class="badge badge-pill bg-success-light">{{ rdv.status }}</span></td>
 																	<td class="text-right">
 																		<div class="table-action">

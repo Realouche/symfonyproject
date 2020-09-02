@@ -26,28 +26,28 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="img", type="string", length=255)
+     * @ORM\Column(name="img", type="string", length=255, nullable=true)
      */
     protected $img;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="adresse", type="string", length=255)
+     * @ORM\Column(name="adresse", type="string", length=255, nullable=true)
      */
     protected $adresse;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telephone", type="string", length=255)
+     * @ORM\Column(name="telephone", type="string", length=255, nullable=true)
      */
     protected $telephone;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_birth", type="date")
+     * @ORM\Column(name="date_birth", type="date", nullable=true)
      */
     protected $dateBirth;
 
@@ -157,5 +157,6 @@ class User extends BaseUser
     {
         return $this->dateBirth;
     }
+
 }
 

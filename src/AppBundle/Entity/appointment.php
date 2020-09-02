@@ -60,6 +60,20 @@ class appointment
      */
     private $status;
 
+    private $RespUsername;
+
+
+    public function getRespUsername(){
+
+        return $this->RespUsername;
+    }
+
+    public function setRespUsername($RespUsername){
+        $this->RespUsername = $RespUsername;
+
+        return $this;
+    }
+
 
     /**
      * Get id
@@ -190,5 +204,6 @@ class appointment
     {
         return $this->status;
     }
+
 }
 

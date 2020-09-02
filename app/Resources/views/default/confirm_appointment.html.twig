@@ -25,7 +25,6 @@
 				
 					<div class="row">
 						<div class="col-12">
-						
 							<div class="card">
 								<div class="card-body">
 									<div class="booking-doc-info">
@@ -33,7 +32,7 @@
 											<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
 										</a>
 										<div class="booking-info">
-											<h4><a href="doctor-profile.html">Dr. Darren Elder</a></h4>
+											<h4><a href="doctor-profile.html">Dr. {{user.username|e}}</a></h4>
 											<div class="rating">
 												<i class="fas fa-star filled"></i>
 												<i class="fas fa-star filled"></i>
@@ -42,173 +41,35 @@
 												<i class="fas fa-star"></i>
 												<span class="d-inline-block average-rating">35</span>
 											</div>
-											<p class="text-muted mb-0"><i class="fas fa-map-marker-alt"></i> Newyork, USA</p>
+											<p class="text-muted mb-0"><i class="fas fa-map-marker-alt"></i> {{user.adresse}} </p>
 										</div>
 									</div>
 								</div>
 							</div>
-							
-							<!-- Schedule Widget -->
-							<div class="card booking-schedule schedule-widget">
-							
-								<!-- Schedule Header -->
-								<div class="schedule-header">
-									<div class="row">
-										<div class="col-md-12">
-										
-											<!-- Day Slot -->
-											<div class="day-slot">
-												<ul>
-													<li class="left-arrow">
-														<button onclick="change_text()">
-															<i class="fa fa-chevron-left"></i>
-														</button>
-													</li>
-													<li>
-														<span>Mon</span>
-														<span id="day" class="slot-date">11</span> </span class="slot-date"> Nov <small class="slot-year">2019</small></span>
-													</li>
-													<li>
-														<span>Tue</span>
-														<span class="slot-date">12 Nov <small class="slot-year">2019</small></span>
-													</li>
-													<li>
-														<span>Wed</span>
-														<span class="slot-date">13 Nov <small class="slot-year">2019</small></span>
-													</li>
-													<li>
-														<span>Thu</span>
-														<span class="slot-date">14 Nov <small class="slot-year">2019</small></span>
-													</li>
-													<li>
-														<span>Fri</span>
-														<span class="slot-date">15 Nov <small class="slot-year">2019</small></span>
-													</li>
-													<li>
-														<span>Sat</span>
-														<span class="slot-date">16 Nov <small class="slot-year">2019</small></span>
-													</li>
-													<li>
-														<span>Sun</span>
-														<span class="slot-date">17 Nov <small class="slot-year">2019</small></span>
-													</li>
-													<li class="right-arrow">
-														<a href="#">
-															<i class="fa fa-chevron-right"></i>
-														</a>
-													</li>
-												</ul>
+							{{ form_start(form , {'attr': {'class': 'row form-row'}}) }}
+								<div class="col-md-7 col-lg-8 col-xl-9">
+									<div class="card">
+										<div class="card-body">
+											<div class="col-12 col-md-6">
+												<div class="form-group">
+													<label>Date of Appointment</label>
+													{{ form_widget(form.date, { 'attr': {'class': 'form-control datetimepicker'} }) }}
+												</div>
 											</div>
-											<!-- /Day Slot -->
-											
-										</div>
-									</div>
-								</div>
-								<!-- /Schedule Header -->
-								
-								<!-- Schedule Content -->
-								<div class="schedule-cont">
-									<div class="row">
-										<div class="col-md-12">
-										
-											<!-- Time Slot -->
-											<div class="time-slot">
-												<ul class="clearfix">
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing selected" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-												</ul>
+											<div class="col-12 col-md-6">
+												<div class="form-group">
+													<label>Time of Appointment</label>
+													{{ form_widget(form.hour, { 'attr': {'class': 'form-control timepicker'} }) }}
+												</div>
 											</div>
-											<!-- /Time Slot -->
-											
+											<div class="submit-section mt-4">
+												<button type="submit" class="btn btn-primary submit-btn">Confirm</button>
+											</div>
 										</div>
 									</div>
 								</div>
-								<!-- /Schedule Content -->
 								
-							</div>
-							<!-- /Schedule Widget -->
-							
-							<!-- Submit Section -->
-							<div class="submit-section proceed-btn text-right">
-								<a href="checkout.html" class="btn btn-primary submit-btn">Proceed to Pay</a>
-							</div>
-							<!-- /Submit Section -->
-							
+							{{ form_end(form) }}
 						</div>
                         <script>
                             function change_class_select(){
